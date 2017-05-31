@@ -1,3 +1,11 @@
 # Scripts for Insight Demo
 # These scripts were produced for the purposes of demonstrating the authors ability to devlop and implement a strategy for decoding and analyzing an exmple dataset.  The work is based on the published research paper, http://dx.doi.org/10.1103/PhysRevD.92.052002
 # Written by Benjamin E. Kaplan (benjamin.eric.kaplan@gmail.com) 
+# The is run in two steps:
+# 1. root -l 'st_resModel.C(1,"generic")'
+#    This tries to fit the fully generic double-sided Crystal Ball (DSCB) to to each of 14 different simulated datasets.  These datasets vary according to the hypothesized mass of the new 'a' particle begin generated.
+#     The mean and width of the Gaussian core of the DSCB are found to have a clear linear dependance on the 'a' mass.  The other parameters are underconstrained and taken apparently random values.
+# 2. root -l 'st_resModel.C(1,"simplified")'
+#     The DSCB model is simplied from 6 to 3 parameters: slope of the mean, slope of the width and the symmetric transition point (in units of the width) from the Gaussian core to the power law tails.
+#     The fit is now done to all 14 datasets simultaneously to achieve very precise predictions for the three free parameters, independent of the 'a' mass.
+#     Since the model is now independent of the mass that generates the distribution, the parameters can be measured by fitting to observed (rather than simulated) dimuon resonanaces.
